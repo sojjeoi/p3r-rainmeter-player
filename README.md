@@ -23,6 +23,7 @@ It displays your current Spotify track, elapsed playback time, and provides basi
 - Spotify track title display
 - Elapsed playback time
 - Play / Pause / Previous / Next controls
+- Equalizer bars that move while music is playing
 - Persona 3 Reload-inspired LCD design
 - Transparent desktop widget
 - Always-on-top support
@@ -134,6 +135,10 @@ Right-click the skin
 → Click through
 ```
 
+> [!NOTE]
+> With **Click through** enabled, the Previous / Play / Next buttons cannot be clicked.
+> Leave it off if you want to control playback from the widget.
+
 ## Controls
 
 The left side of the player contains invisible clickable areas for:
@@ -143,6 +148,7 @@ The left side of the player contains invisible clickable areas for:
 - Next track
 
 Spotify must be running for the controls to work.
+The controls do not respond while **Click through** is enabled.
 
 ## Troubleshooting
 
@@ -168,6 +174,16 @@ Enable:
 Settings
 → Position
 → Stay Topmost
+```
+
+### The buttons do not respond
+
+Make sure **Click through** is disabled:
+
+```text
+Right-click the skin
+→ Settings
+→ Click through
 ```
 
 ## Credits
