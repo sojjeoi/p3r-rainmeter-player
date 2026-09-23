@@ -28,6 +28,12 @@ It displays your current Spotify track, elapsed playback time, and provides basi
 - Always-on-top support
 - Click-through support
 
+## Desktop Preview
+
+<div align="center">
+  <img src="desktop-preview.png" alt="P3R Rainmeter Player on desktop" width="700">
+</div>
+
 ## Requirements
 
 Before installing the skin, install the following:
