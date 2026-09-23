@@ -4,7 +4,7 @@
 
 A Persona 3 Reload-inspired Spotify mini player for Rainmeter.
 
-<img src="preview.gif" alt="P3R Rainmeter Player preview" width="620">
+<img src="preview.gif" alt="P3R Rainmeter Player preview" width="400">
 
 <p>
   <img src="https://img.shields.io/badge/Windows-Rainmeter-0078D6?style=flat-square" alt="Windows">
