@@ -171,6 +171,14 @@ If necessary, restart Rainmeter after installing.
 
 When several apps play at once, Windows picks one media session, usually the one that started playing most recently. Pause the other apps, or start the one you want again.
 
+### Rainmeter freezes when the skin loads
+
+The MediaPlayer plugin waits for Windows to report what is playing. If the Windows media controls get stuck, Rainmeter waits with it and stops responding. This happens with any skin that uses the plugin, not just this one.
+
+1. Fully quit your music apps (Spotify, browsers playing media), including their tray icons.
+2. End `Rainmeter.exe` in Task Manager and start Rainmeter again.
+3. If it still freezes, restart the PC. This resets the Windows media controls.
+
 ### The font looks different
 
 Make sure **Long Pixel-7** is installed, then refresh the skin.
