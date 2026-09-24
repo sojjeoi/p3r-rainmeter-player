@@ -2,7 +2,7 @@
 
 # P3R Rainmeter Player
 
-A Persona 3 Reload-inspired Spotify mini player for Rainmeter.
+A Persona 3 Reload-inspired mini music player for Rainmeter. Works with Spotify, YouTube and more.
 
 <img src="preview.gif" alt="P3R Rainmeter Player preview" width="400">
 
@@ -12,7 +12,7 @@ A Persona 3 Reload-inspired Spotify mini player for Rainmeter.
 
 <p>
   <img src="https://img.shields.io/badge/Windows-Rainmeter-0078D6?style=flat-square" alt="Windows">
-  <img src="https://img.shields.io/badge/Spotify-supported-1DB954?style=flat-square" alt="Spotify">
+  <img src="https://img.shields.io/badge/works%20with-Spotify%20%C2%B7%20YouTube%20%C2%B7%20more-1DB954?style=flat-square" alt="Works with Spotify, YouTube and more">
   <img src="https://img.shields.io/badge/status-fan--made-777777?style=flat-square" alt="Fan-made">
 </p>
 
@@ -20,11 +20,12 @@ A Persona 3 Reload-inspired Spotify mini player for Rainmeter.
 
 A lightweight desktop music player skin inspired by the portable music player UI from **Persona 3 Reload**.
 
-It displays your current Spotify track, elapsed playback time, and provides basic media controls directly from your desktop.
+It shows what's playing in Spotify, YouTube in your browser, or any other app that appears in the Windows media controls, with elapsed time and playback controls right on your desktop.
 
 ## Features
 
-- Spotify track title or artist display
+- Works with Spotify, YouTube in a browser, and other apps in the Windows media controls
+- Track title or artist display
 - Elapsed playback time that ticks steadily once per second
 - Rim buttons modeled on the original Walkman: info, play / pause, volume, previous, next
 - Button name labels on hover
@@ -58,7 +59,7 @@ LCDText=24,55,55,255
 2. Install the [Long Pixel-7](https://font.download/font/long-pixel-7) font: extract the ZIP, right-click the `.ttf` file and select **Install**.
 3. Download **P3RPlayer_v*.rmskin** from [Releases](https://github.com/sojjeoi/p3r-rainmeter-player/releases/latest), double-click it and click **Install**.
 
-That's it. The `MediaPlayer` plugin that reads Spotify playback is included in the `.rmskin`, and the skin loads on its own. Keep [Spotify Desktop](https://www.spotify.com/download/windows/) running and play a song.
+That's it. The `MediaPlayer` plugin that reads playback info is included in the `.rmskin`, and the skin loads on its own. Play a song in Spotify, YouTube in your browser, or any app that shows up in the Windows media controls (the popup you see when you press a volume key).
 
 <details>
 <summary>Manual install (without the .rmskin)</summary>
@@ -140,7 +141,7 @@ Hover over a button to see its name. The black cap on the left also has hidden P
 
 Right-click the skin to change the LCD color.
 
-Spotify must be running for the playback controls to work.
+A music app must be open for the playback controls to work. Previous / next depend on what the app supports.
 The buttons do not respond while **Click through** is enabled.
 
 ## How it works
@@ -149,7 +150,7 @@ The buttons do not respond while **Click through** is enabled.
   <img src="docs/architecture.png" alt="How the skin is put together" width="800">
 </div>
 
-- **Playback data:** Spotify publishes its state to the Windows media session. `MediaPlayer.dll` reads it, and the skin polls it.
+- **Playback data:** Spotify, browsers and other music apps publish their state to the Windows media session. `MediaPlayer.dll` reads it, and the skin polls it.
 - **Elapsed time:** the plugin rounds song position and wall time to whole seconds separately, so its counter skips or stalls. The skin counts on the system clock instead and resyncs only on pause, seek or track change.
 - **Rim buttons:** drawn behind the body image, so only their top edge shows, like the Sony Walkman the in-game player is based on.
 - **LCD colors:** the LCD is cut out of the artwork as a grey mask (`lcd_screen.png`) and tinted at runtime, so one image covers every color.
@@ -160,11 +161,15 @@ The buttons do not respond while **Click through** is enabled.
 
 Make sure:
 
-- Spotify Desktop is running
+- A music app (Spotify, YouTube in a browser, ...) is open and shows up in the Windows media controls
 - A song is currently playing
 - The skin was installed from the `.rmskin` (it includes the MediaPlayer plugin), or RainmeterMediaPlayer is installed if you installed manually
 
 If necessary, restart Rainmeter after installing.
+
+### It shows a different app than the one I want
+
+When several apps play at once, Windows picks one media session, usually the one that started playing most recently. Pause the other apps, or start the one you want again.
 
 ### The font looks different
 
