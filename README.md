@@ -7,6 +7,10 @@ A Persona 3 Reload-inspired Spotify mini player for Rainmeter.
 <img src="preview.gif" alt="P3R Rainmeter Player preview" width="400">
 
 <p>
+  <a href="https://github.com/sojjeoi/p3r-rainmeter-player/releases/latest"><img src="https://img.shields.io/badge/Download-.rmskin-2f9fd0?style=for-the-badge" alt="Download .rmskin"></a>
+</p>
+
+<p>
   <img src="https://img.shields.io/badge/Windows-Rainmeter-0078D6?style=flat-square" alt="Windows">
   <img src="https://img.shields.io/badge/Spotify-supported-1DB954?style=flat-square" alt="Spotify">
   <img src="https://img.shields.io/badge/status-fan--made-777777?style=flat-square" alt="Fan-made">
@@ -48,60 +52,30 @@ LCDColor=150,225,227
 LCDText=24,55,55,255
 ```
 
-## Requirements
-
-Before installing the skin, install the following:
-
-### Rainmeter
-
-Download and install Rainmeter:
-
-https://www.rainmeter.net/
-
-### RainmeterMediaPlayer
-
-This skin uses `MediaPlayer.dll` to read Spotify playback information.
-
-Download the latest release:
-
-https://github.com/i2002/RainmeterMediaPlayer/releases
-
-Download the `.rmskin` file, open it, and click **Install**.
-
-### Long Pixel-7
-
-The LCD text uses the **Long Pixel-7** font.
-
-Download it here:
-
-https://font.download/font/long-pixel-7
-
-After downloading:
-
-1. Extract the ZIP file.
-2. Find the `.ttf` font file.
-3. Right-click the font file.
-4. Select **Install**.
-
-### Spotify Desktop
-
-Spotify Desktop must be running for playback information to appear.
-
-https://www.spotify.com/download/windows/
-
 ## Installation
 
-1. Click **Code → Download ZIP** on this repository.
+1. Install [Rainmeter](https://www.rainmeter.net/) (4.5.16 or newer).
+2. Install the [Long Pixel-7](https://font.download/font/long-pixel-7) font: extract the ZIP, right-click the `.ttf` file and select **Install**.
+3. Download **P3RPlayer_v*.rmskin** from [Releases](https://github.com/sojjeoi/p3r-rainmeter-player/releases/latest), double-click it and click **Install**.
 
-2. Extract the ZIP file.
+That's it. The `MediaPlayer` plugin that reads Spotify playback is included in the `.rmskin`, and the skin loads on its own. Keep [Spotify Desktop](https://www.spotify.com/download/windows/) running and play a song.
 
-3. Rename the extracted folder to:
+<details>
+<summary>Manual install (without the .rmskin)</summary>
+
+1. Install the [RainmeterMediaPlayer](https://github.com/i2002/RainmeterMediaPlayer/releases) plugin: download its `.rmskin`, open it and click **Install**.
+
+2. Click **Code → Download ZIP** on this repository.
+
+3. Extract the ZIP file.
+
+4. Rename the extracted folder to:
 
 ```text
 P3RPlayer
 ```
 
-4. Move the folder to:
+5. Move the folder to:
 
 ```text
 Documents\Rainmeter\Skins\
@@ -119,17 +93,13 @@ P3RPlayer
         └── lcd_screen.png
 ```
 
-5. Open Rainmeter.
-
-6. Click **Refresh all**.
-
-7. Load:
+6. Open Rainmeter, click **Refresh all**, then load:
 
 ```text
 P3RPlayer → P3RPlayer.ini
 ```
 
-Start playing a song in Spotify and the player should update automatically.
+</details>
 
 ## Recommended Settings
 
@@ -192,9 +162,9 @@ Make sure:
 
 - Spotify Desktop is running
 - A song is currently playing
-- RainmeterMediaPlayer is installed
+- The skin was installed from the `.rmskin` (it includes the MediaPlayer plugin), or RainmeterMediaPlayer is installed if you installed manually
 
-If necessary, restart Rainmeter after installing RainmeterMediaPlayer.
+If necessary, restart Rainmeter after installing.
 
 ### The font looks different
 
