@@ -20,20 +20,33 @@ It displays your current Spotify track, elapsed playback time, and provides basi
 
 ## Features
 
-- Spotify track title display
-- Elapsed playback time
-- Play / Pause / Previous / Next controls
+- Spotify track title or artist display
+- Elapsed playback time that ticks steadily once per second
+- Rim buttons modeled on the original Walkman: info, play / pause, volume, previous, next
+- Button name labels on hover
+- 8 LCD color presets, switched from the right-click menu
 - Equalizer bars that move while music is playing
 - Persona 3 Reload-inspired LCD design
 - Transparent desktop widget
 - Always-on-top support
 - Click-through support
 
-## Desktop Preview
+## LCD Colors
 
 <div align="center">
-  <img src="desktop-preview.png" alt="P3R Rainmeter Player on desktop" width="700">
+  <img src="docs/lcd-colors.png" alt="The eight LCD color presets" width="800">
 </div>
+
+Right-click the skin and pick an **LCD:** entry. The screen, text and icons change together, and the choice is kept after a restart.
+
+To use your own colors, edit these two lines in `P3RPlayer.ini` and refresh the skin:
+
+```ini
+; Screen color (shows about 14% darker than the value)
+LCDColor=150,225,227
+; Text and icon color
+LCDText=24,55,55,255
+```
 
 ## Requirements
 
@@ -101,7 +114,9 @@ P3RPlayer
 ├── P3RPlayer.ini
 └── @Resources
     └── Images
-        └── player_body.png
+        ├── player_body.png
+        ├── player_body_300.png
+        └── lcd_screen.png
 ```
 
 5. Open Rainmeter.
@@ -136,19 +151,38 @@ Right-click the skin
 ```
 
 > [!NOTE]
-> With **Click through** enabled, the Previous / Play / Next buttons cannot be clicked.
+> With **Click through** enabled, the player's buttons cannot be clicked.
 > Leave it off if you want to control playback from the widget.
 
 ## Controls
 
-The left side of the player contains invisible clickable areas for:
+The buttons on the top rim, from left to right:
 
-- Previous track
-- Play / Pause
-- Next track
+| Button | Action |
+|---|---|
+| INFO | Show the track title or the artist |
+| PLAY | Play / Pause |
+| VOL − / + | Windows volume down / up (5%) |
+| PREV | Previous track |
+| NEXT | Next track |
 
-Spotify must be running for the controls to work.
-The controls do not respond while **Click through** is enabled.
+Hover over a button to see its name. The black cap on the left also has hidden Previous / Play / Next areas.
+
+Right-click the skin to change the LCD color.
+
+Spotify must be running for the playback controls to work.
+The buttons do not respond while **Click through** is enabled.
+
+## How it works
+
+<div align="center">
+  <img src="docs/architecture.png" alt="How the skin is put together" width="800">
+</div>
+
+- **Playback data:** Spotify publishes its state to the Windows media session. `MediaPlayer.dll` reads it, and the skin polls it.
+- **Elapsed time:** the plugin rounds song position and wall time to whole seconds separately, so its counter skips or stalls. The skin counts on the system clock instead and resyncs only on pause, seek or track change.
+- **Rim buttons:** drawn behind the body image, so only their top edge shows, like the Sony Walkman the in-game player is based on.
+- **LCD colors:** the LCD is cut out of the artwork as a grey mask (`lcd_screen.png`) and tinted at runtime, so one image covers every color.
 
 ## Troubleshooting
 
@@ -191,6 +225,7 @@ Right-click the skin
 - [Rainmeter](https://www.rainmeter.net/)
 - [RainmeterMediaPlayer](https://github.com/i2002/RainmeterMediaPlayer)
 - [Long Pixel-7](https://font.download/font/long-pixel-7)
+- Diagram icons: [Lucide](https://lucide.dev), [Simple Icons](https://simpleicons.org)
 
 ## Disclaimer
 
