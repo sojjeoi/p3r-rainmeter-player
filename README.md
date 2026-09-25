@@ -221,5 +221,3 @@ This project is not affiliated with or endorsed by ATLUS or SEGA.
 Preview images use official Persona 3 artwork © ATLUS / SEGA as a desktop background.
 
 Feedback, bug reports, and suggestions are always welcome. Feel free to open an issue or leave a comment.
-
-If you like the skin, consider leaving a ⭐ on the repository.
