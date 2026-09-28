@@ -214,7 +214,7 @@ Right-click the skin
 
 This is an unofficial fan-made Rainmeter skin inspired by **Persona 3 Reload**.
 
-Persona 3 Reload and related trademarks and intellectual property belong to **ATLUS / SEGA** and their respective owners.
+Persona 3 Reload and related trademarks and intellectual property belong to **ATLUS / SEGA** and their respective owners..
 
 This project is not affiliated with or endorsed by ATLUS or SEGA.
 
